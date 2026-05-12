@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvxnmqcllnbob"]
+
+[ext_resource type="Script" uid="uid://66uk6ker8d2i" path="res://Scripts/cell.gd" id="1_rdgq0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dg4bq"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdgq0"]
+size = Vector2(100, 100)
+
+[node name="Cell" type="Area2D"]
+script = ExtResource("1_rdgq0")
+
+[node name="Cell Texture" type="Sprite2D" parent="."]
+position = Vector2(-19, -10)
+texture = SubResource("PlaceholderTexture2D_dg4bq")
+
+[node name="Cell Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-19, -10)
+shape = SubResource("RectangleShape2D_rdgq0")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
